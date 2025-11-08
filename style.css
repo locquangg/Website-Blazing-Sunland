@@ -1,0 +1,340 @@
+/* Thiết lập Font chữ cơ bản */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Màu nền tối */
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Cấu trúc chung */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #FF5722; /* Màu Cam Nóng (Fire/Blazing) */
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* === HEADER & NAVIGATION === */
+.header {
+    /* Đã làm trong suốt 80% */
+    background-color: rgba(31, 31, 31, 0.8); 
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Thêm hiệu ứng mờ cho nền (backdrop-filter) để đẹp hơn */
+    backdrop-filter: blur(5px);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; 
+    width: auto;
+}
+
+.nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF5722; /* Hover màu Cam Nóng */
+}
+
+/* === HERO SECTION === */
+.hero {
+    background: url('hero_bg.jpg') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* SỬA GRADIENT: Dùng màu Vàng Rực đơn sắc */
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #FFC107; /* Vàng Rực (Không gradient) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    line-height: 1.1; /* Giảm khoảng cách dòng khi xuống dòng */
+}
+
+.hero .slogan {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #FFC107; /* Màu Vàng (Sun) */
+}
+
+/* Server Status Box */
+.server-status-box {
+    /* Đã làm trong suốt 85% */
+    background-color: rgba(30, 30, 30, 0.85);
+    padding: 25px 40px;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.server-status-box h2 {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#server-ip {
+    display: block;
+    font-size: 2em;
+    font-weight: 900;
+    color: #FFC107; /* Màu Vàng */
+    margin-bottom: 15px;
+}
+
+.status-info span {
+    margin: 0 10px;
+    font-weight: 700;
+    color: #f0f0f0;
+}
+
+/* Nút Chung */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #FF5722; 
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #FF7043;
+}
+
+.btn-secondary {
+    background-color: #FFC107; 
+    color: #121212;
+}
+
+.btn-secondary:hover {
+    background-color: #FFD54F;
+}
+
+.large-btn {
+    padding: 15px 50px;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+/* === CỤM MÁY CHỦ === */
+.single-survival-mode {
+    grid-template-columns: minmax(300px, 600px); 
+    justify-content: center;
+}
+
+.gamemodes .card {
+    /* Đã làm trong suốt 85% */
+    background-color: rgba(31, 31, 31, 0.85);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    border: 1px solid #333; 
+}
+
+.gamemodes .card:hover {
+    transform: translateY(-5px);
+}
+
+.gamemodes .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.gamemodes .card h3 {
+    margin: 15px 15px 5px;
+    font-size: 1.8em;
+    color: #FFC107; /* Vàng */
+}
+
+.gamemodes .card p {
+    padding: 0 15px 15px;
+    margin: 0;
+    color: #ccc;
+}
+
+/* Features Icon */
+.icon-features .feature-item {
+    /* Đã làm trong suốt 85% */
+    background-color: rgba(31, 31, 31, 0.85);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.icon-features .feature-item .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-features .feature-item h3 {
+    color: #FF5722; /* Cam Nóng */
+    margin-top: 0;
+}
+
+/* === SUPPORT & CONTACT === */
+.support {
+    /* Đã làm trong suốt 85% */
+    background-color: rgba(31, 31, 31, 0.85);
+}
+
+.contact-links {
+    margin-top: 30px;
+}
+
+.contact-btn {
+    margin: 10px;
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+.discord-btn { background-color: #7289DA; color: white; }
+.facebook-btn { background-color: #4267B2; color: white; }
+
+.contact-btn:hover { opacity: 0.8; }
+
+.final-ip-call {
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+.final-ip-call strong {
+    color: #FFC107;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #0d0d0d;
+    color: #888;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-links a:hover {
+    color: #f0f0f0;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .header .nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header .nav a {
+        margin: 5px 10px;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+    
+    .hero .slogan {
+        font-size: 1.2em;
+    }
+
+    .server-status-box {
+        padding: 20px 20px;
+    }
+
+    #server-ip {
+        font-size: 1.5em;
+    }
+    
+    .single-survival-mode {
+        grid-template-columns: 1fr; 
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+}
