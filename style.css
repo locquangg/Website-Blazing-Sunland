@@ -1,0 +1,264 @@
+/* Thiết lập Font chữ cơ bản */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; 
+    color: #f0f0f0;
+    line-height: 1.6;
+
+    background-image: url('hero_bg.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+}
+
+/* Lớp phủ cho toàn bộ body */
+body::before {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1; 
+}
+
+/* === KEYFRAMES CHO ANIMATION === */
+
+/* 1. Hiệu ứng Khối nhấp nháy (cho nút COPY) */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); } /* Cam Nóng */
+    70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+}
+
+/* 2. Hiệu ứng Mờ dần khi tải trang (Fade In) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Áp dụng hiệu ứng Fade In cho toàn bộ nội dung sau khi tải */
+body {
+    /* Giữ nguyên các thuộc tính khác... */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Cấu trúc chung */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Các section cần có nền trong suốt để ảnh body hiện ra */
+.section {
+    background-color: rgba(31, 31, 31, 0.8); 
+    margin: 30px auto; 
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 10px; 
+    /* THÊM: Hiệu ứng chuyển động mượt mà khi hover */
+    transition: background-color 0.3s ease; 
+}
+/* Hiệu ứng làm mờ nền khi người dùng hover qua 1 section */
+.section:hover {
+    background-color: rgba(31, 31, 31, 0.85); 
+}
+
+h1, h2, h3 {
+    color: #FF5722; 
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* === HEADER & NAVIGATION === */
+.header {
+    background-color: rgba(31, 31, 31, 0.8); 
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px; 
+    width: auto;
+}
+
+.nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF5722; 
+    /* THÊM: Dịch chuyển nhẹ khi hover */
+    transform: translateY(-2px); 
+}
+
+/* === HERO SECTION === */
+.hero {
+    padding-bottom: 50px; 
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: transparent; 
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #FFC107; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    line-height: 1.1; 
+}
+
+.hero .slogan {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #FFC107; 
+}
+
+/* Server Status Box */
+.server-status-box {
+    background-color: rgba(30, 30, 30, 0.85); 
+    padding: 25px 40px;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+/* Nút Chung */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    /* THÊM: Chuyển động mượt mà */
+    transition: all 0.3s ease; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #FF5722; 
+    color: white;
+    margin-top: 10px;
+    /* ÁP DỤNG: Hiệu ứng nhấp nháy cho nút COPY IP */
+    animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+    background-color: #FF7043;
+    /* THÊM: Hiệu ứng Scale nhẹ khi hover */
+    transform: scale(1.05); 
+    animation: none; /* Dừng nhấp nháy khi hover */
+}
+
+.btn-secondary {
+    background-color: #FFC107; 
+    color: #121212;
+}
+
+.btn-secondary:hover {
+    background-color: #FFD54F;
+    transform: scale(1.05); 
+}
+
+/* === CỤM MÁY CHỦ (Card Animation) === */
+.gamemodes .card {
+    background-color: transparent; 
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* THÊM: Chuyển động mượt mà */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border: 1px solid #333; 
+}
+
+.gamemodes .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4); /* Thêm bóng Cam Nóng khi hover */
+}
+
+/* === FEATURES (Icon Animation) === */
+.icon-features .feature-item {
+    background-color: transparent; 
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    /* THÊM: Chuyển động mượt mà */
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.icon-features .feature-item:hover {
+    /* THÊM: Dịch chuyển nhẹ lên và đổi màu nền */
+    transform: translateY(-5px);
+    background-color: rgba(255, 87, 34, 0.1); 
+}
+
+.icon-features .feature-item .icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-features .feature-item h3 {
+    color: #FF5722; 
+    margin-top: 0;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: rgba(13, 13, 13, 0.8); 
+    color: #888;
+    padding: 20px 0;
+    font-size: 0.9em;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+    margin-top: 0; 
+}
+
+/* Giữ nguyên phần responsive media queries */
+@media (max-width: 768px) {
+    /* ... (Nội dung media queries) ... */
+    /* ... */
+}
